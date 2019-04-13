@@ -4,17 +4,17 @@
         <p class="text-center w-responsive mx-auto mb-5">{{message}}</p>
         <div class="row">
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <form id="contact-form" name="contact-form" class="css-form">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="name" name="name" class="form-control">
+                                <input type="text" id="name" name="name" class="form-control" ng-model="user.name" required>
                                 <label for="name" class="">Tu nombre</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
+                                <input type="email" id="email" name="email" class="form-control" ng-model="user.email" required>
                                 <label for="email" class="">Correo electronico</label>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form mb-0">
-                                <input type="text" id="subject" name="subject" class="form-control">
+                                <input type="text" id="subject" name="subject" class="form-control" ng-model="user.subject" required>
                                 <label for="subject" class="">Asunto</label>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea"></textarea>
+                                <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea" ng-model="user.message" required></textarea>
                                 <label for="message">Mensaje</label>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                 </form>
                 
                 <div class="text-center text-md-left">
-                    <a class="btn btn-primary text-light">Enviar</a>
+                    <a class="btn btn-primary text-light" href="#" value="message send" g-click="showSuccess()">Enviar</a>
                 </div>
                 <div class="status"></div>
             </div>

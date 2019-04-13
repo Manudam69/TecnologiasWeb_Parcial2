@@ -17,6 +17,7 @@ app.config(function ($routeProvider) {
             // route for the contact page
             templateUrl: 'pages/contact.html',
             controller: 'contactController'
+
         })
         .when('/services', {
             // route for the contact page
@@ -31,6 +32,7 @@ app.config(function ($routeProvider) {
 });
 
 
+
 app.controller('homeController', function ($scope) {
     $scope.message = 'El farolito!';
 });
@@ -39,6 +41,16 @@ app.controller('aboutController', function ($scope) {
 });
 app.controller('contactController', function ($scope) {
     $scope.message = '¿Tiene usted alguna pregunta? Por favor no dude en contactarnos directamente. Nuestro equipo volverá a usted dentro unas horas para ayudarte.!';
+    $scope.master = {};
+    $scope.update = function (user) {
+        $scope.master = angular.copy(user);
+    };
+    $scope.reset = function () {
+        $scope.user = angular.copy($scope.master);
+    };
+
+    $scope.reset();
+
 });
 
 app.controller('servicesController', function ($scope) {
