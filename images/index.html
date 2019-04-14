@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script type="text/javascript">var app = angular.module('MyApp', []);
+            app.controller('MyFilterDemoCtrl', function ($scope) {
+                var someData = {firstName: 'JENNA', surname: 'GRANT', dateJoined: new Date(2010, 2, 23), consumption: 123.659855, plan: 'super-basic-plan'};
+                someData.firstName = someData.firstName.toUpperCase();
+                someData.surname = someData.surname.toUpperCase();
+                $scope.data = someData;
+            });</script>
+    </head>
+
+
+    <body ng-app="MyApp">
+        <div ng-controller="MyFilterDemoCtrl">
+            <p><!--Unfiltered data --><strong>First Name</strong>: {{data.firstName}}
+                <br/>
+                <strong>Surname:</strong> {{data.surname}}</p>
+            <p><!--Filtered data --><strong>First Name</strong>: {{data.firstName| lowercase}}<br/><strong>Surname:</strong> {{data.surname| lowercase }}</p>
+
+            <p> Consumption: {{data.consumption}}<br/>
+                Consumption: {{data.consumption| number:2}}
+            </p>
+            <p>medium:<strong> {{ data.dateJoined | date:'medium'}} </strong></p>
+            <p>mediumDate:<strong> {{ data.dateJoined | date:'mediumDate'}} </strong></p>
+            <p>shortDate:<strong> {{ data.dateJoined | date:'shortDate'}} </strong></p>
+            <p>This customer joined in the month of {{ data.dateJoined | date:'MMMM'}} on a {{data.dateJoined| date:'EEEE'}} at {{ data.dateJoined | date:'ha'}}</p>
+        </div>
+
+    </body>
+</html>
