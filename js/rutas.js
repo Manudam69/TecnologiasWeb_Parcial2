@@ -42,6 +42,7 @@ app.controller('aboutController', function ($scope) {
 app.controller('contactController', function ($scope) {
     $scope.message = '¿Tiene usted alguna pregunta? Por favor no dude en contactarnos directamente. Nuestro equipo volverá a usted dentro unas horas para ayudarte.!';
     $scope.master = {};
+    $scope.user = {};
     $scope.update = function (user) {
         $scope.master = angular.copy(user);
     };

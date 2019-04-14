@@ -36,6 +36,12 @@ a {
     height: 70px;
     z-index: 1;
 }
+
+#error{
+    background-image: url(../images/azul.png);
+    background-color: red;
+}
+
 body {
     color: #fff;
     font-size: 18px;
